@@ -46,7 +46,12 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          fallback: {
+            loader: 'file-loader',
+            options: {
+              name: utils.assetsPath('img/[name].[hash:7].[ext]')
+            }
+          }
         }
       },
       {

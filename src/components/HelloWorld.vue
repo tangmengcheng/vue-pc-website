@@ -1,15 +1,22 @@
 <template>
-  <div class="hello">
-    <h2>Essential Links</h2>
+  <div class="content">
+    <headers></headers>
+    <footers></footers>
   </div>
 </template>
 
 <script>
+import Headers from './header/Header'
+import Footers from './footer/Footer'
 export default {
   name: 'HelloWorld',
   data () {
     return {
     }
+  },
+  components: {
+    Headers,
+    Footers
   }
 }
 </script>
