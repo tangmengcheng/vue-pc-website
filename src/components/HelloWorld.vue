@@ -1,6 +1,7 @@
 <template>
   <div class="content">
     <headers></headers>
+    <home></home>
     <footers></footers>
   </div>
 </template>
@@ -8,6 +9,7 @@
 <script>
 import Headers from './header/Header'
 import Footers from './footer/Footer'
+import Home from './home/Home'
 export default {
   name: 'HelloWorld',
   data () {
@@ -16,7 +18,8 @@ export default {
   },
   components: {
     Headers,
-    Footers
+    Footers,
+    Home
   }
 }
 </script>

@@ -1,15 +1,13 @@
 import axios from 'axios'
 import Qs from 'qs'
-import { get } from 'http';
-import { reject } from 'q';
 
 // 自动切换环境
 if(process.env.NODE_ENV == 'development') {
-    axios.defaults.baseURL = '/api'
+    axios.defaults.baseURL = '/commonAPI'
 } else if(process.env.NODE_ENV == 'debug') {
-    axios.defaults.baseURL = '/api'
+    axios.defaults.baseURL = '/commonAPI'
 } else if(process.env.NODE_ENV == 'production') {
-    axios.defaults.baseURL = 'http://www.baidu.com'
+    axios.defaults.baseURL = 'http://ssg168.net/lsapi1/'
 }
 
 // 设置超时时间
@@ -19,7 +17,7 @@ axios.defaults.timeout = 10000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 
 // 对外请求接口
-export function request({method, url, params}) {
+export default function request({method, url, params}) {
     if(method == 'GET') {
         return get(url, params)
     } else if(method == 'POST') {
